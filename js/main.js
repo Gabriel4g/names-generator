@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
 const button_generator = document.querySelector("#generator-button");
 const nameText = document.querySelector("#nomes");
+const button_stop = document.querySelector("#stop");
 
 const names = [
     "Gabriel", "Gustavo", "Julio", "Ismael", "Aquino", "Geovane", "João", "Lucas",
@@ -23,7 +24,7 @@ const namesGenerator = () => {
     nameText.style.fontSize = "2rem"
     nameText.style.letterSpacing = "1px"
 }
-
+ 
 const automaticGenerator = () => {
     nameText.innerHTML = ""
 
@@ -35,4 +36,10 @@ const automaticGenerator = () => {
 
     nameText.style.fontSize = "2rem"
     nameText.style.letterSpacing = "1px"
+
+    button_stop.style.display = "block"
+}
+
+const stopAutomatic = () => {
+    location.reload()
 }

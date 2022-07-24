@@ -16,6 +16,7 @@ body {
 #container {
     height: auto;
     width: 100%;
+    max-width: 1000px;
     border-radius: 5px;
     padding: 30px;
     margin-bottom: 4rem;
@@ -75,7 +76,8 @@ body {
 }
 
 #generator-button,
-#automatic-button  {
+#automatic-button,
+#stop {
     height: 5rem;
     width: 18rem;
     background: #00b341;
@@ -87,7 +89,12 @@ body {
     color: #fff;
 }
 
-@media (max-width: 600px) {
+#stop {
+    background: #d63b3b;
+    display: none;
+}
+
+@media (max-width: 768px) {
 
     #container-generate {
         display: flex;
@@ -96,6 +103,7 @@ body {
 
     #generator-button, 
     #automatic-button,
+    #stop,
     .container-names {
         width: 100%;
     }
