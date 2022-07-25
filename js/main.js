@@ -3,7 +3,8 @@ const button_generator = document.querySelector("#generator-button");
 const nameText = document.querySelector("#nomes");
 const button_stop = document.querySelector("#stop");
 const button_like = document.querySelector("#like-name");
-const automatic_button = document.querySelector("#automatic-button")
+const automatic_button = document.querySelector("#automatic-button");
+const loadImg = document.querySelector(".loading");
 
 const names = [
     "Gabriel", "Gustavo", "Julio", "Ismael", "Aquino", "Geovane", "João", "Lucas",
@@ -25,12 +26,16 @@ const namesGenerator = () => {
 }
 
 const automaticGenerator = () => {
-    nameText.innerHTML = "Loading..."
+    loadImg.style.animation = "load 500ms";
+    loadImg.style.display = "flex";
+    nameText.innerHTML = "";
 
     setInterval(() => {
     const drawNames = Math.floor(Math.random() * names.length);
 
     nameText.innerHTML = names[drawNames];
+
+    loadImg.style.display = "none"
     }, 2500);
 
     nameText.style.fontSize = "2rem"
@@ -38,9 +43,9 @@ const automaticGenerator = () => {
 
     button_stop.style.display = "flex";
     button_like.style.display = "flex";
-    button_generator.style.display = "none"
-    
-    automatic_button.setAttribute("disabled", "disabled")
+    button_generator.style.display = "none";
+
+    automatic_button.setAttribute("disabled", "disabled");
 }
 
 const likeFromName = () => {
