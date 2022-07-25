@@ -1,6 +1,7 @@
-## 🤖 Gerador de nomes masculino e feminino
+## 🤖 Gerador de nomes 🤖
 
-![Captura de tela de 2022-07-24 01-17-52](https://user-images.githubusercontent.com/92071360/180635067-14788aa6-7f54-498e-8e17-716f121cb92a.png)
+![Captura de tela de 2022-07-24 19-59-41](https://user-images.githubusercontent.com/92071360/180674696-10083492-30fb-4f03-b83d-ae0c64e3d9a7.png)
+
 
  <hr/>
  
