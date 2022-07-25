@@ -3,6 +3,7 @@ const button_generator = document.querySelector("#generator-button");
 const nameText = document.querySelector("#nomes");
 const button_stop = document.querySelector("#stop");
 const button_like = document.querySelector("#like-name");
+const automatic_button = document.querySelector("#automatic-button")
 
 const names = [
     "Gabriel", "Gustavo", "Julio", "Ismael", "Aquino", "Geovane", "João", "Lucas",
@@ -38,6 +39,8 @@ const automaticGenerator = () => {
     button_stop.style.display = "flex";
     button_like.style.display = "flex";
     button_generator.style.display = "none"
+    
+    automatic_button.setAttribute("disabled", "disabled")
 }
 
 const likeFromName = () => {
