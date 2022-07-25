@@ -35,8 +35,9 @@ const automaticGenerator = () => {
     nameText.style.fontSize = "2rem"
     nameText.style.letterSpacing = "1px"
 
-    button_stop.style.display = "flex"
-    button_like.style.display = "flex"
+    button_stop.style.display = "flex";
+    button_like.style.display = "flex";
+    button_generator.style.display = "none"
 }
 
 const likeFromName = () => {
