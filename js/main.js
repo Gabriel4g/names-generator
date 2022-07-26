@@ -21,10 +21,21 @@ const menNames = [
     "Thiago", "Evandro", "Elton", "Iran", "Alisson", "Miguel", "Marcos", "Alexandre", "Alerrandro"
 ];
 
-const namesGenerator = () => {
-    const drawNames = Math.floor(Math.random() * menNames.length);
+const arrayRamdom = [
+    "Gabriel", "Gustavo", "Julio", "Ismael", "Aquino", "Geovane", "João", "Lucas",
+    "Alex", "Ryan", "Bruno", "Flavio", "Francisco", "Rômulo", "Rômero", "Fabio", "Pedro",
+    "Guilherme", "Izaias", "Luis", "Luan", "Jhonatan", "Eduardo", "Arthur", "Antonio", "Felipe",
+    "Thiago", "Evandro", "Elton", "Iran", "Alisson", "Miguel", "Marcos", "Alexandre", "Alerrandro",
+    "Eva", "Maria", "Cecilia", "Clara", "Simone", "Marie", "Margaret",
+    "Valentina", "Rosa", "Nadia", "Joana", "Mary", "Anita", "Helen", "Amelia", "Naele", 
+    "Fernanda", "Catarina", "Carolina", "Angela", "Michelle", "Rita", "Nísia", "Lili",
+    "Katharine", "Vitória", "Elizabeth", "Anne", "Ana", "Kelly", "Diana", "Maísa", "Olívia"
+];
 
-    nameText.innerHTML = menNames[drawNames];
+const namesGenerator = () => {
+    const drawNames = Math.floor(Math.random() * arrayRamdom.length);
+
+    nameText.innerHTML = arrayRamdom[drawNames];
 
     nameText.style.fontSize = "2rem";
     nameText.style.letterSpacing = "1px";

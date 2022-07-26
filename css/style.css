@@ -56,7 +56,7 @@ body {
 }
 
 .container-names {
-    width: 20rem;
+    width: 25rem;
     height: 5rem;
     background: #fff;
     display: flex;
@@ -112,6 +112,7 @@ body {
 
 #automatic-F {
     background: #764ba2;
+    padding-right: 0.60rem;
 }
 
 #automatic-F:hover {
@@ -158,10 +159,6 @@ body {
 
     #generator-button {
         margin-top: 1rem;
-    }
-
-    #automatic-button {
-        padding-left: 0.57rem;
     }
 
     #like-name {
