@@ -78,6 +78,7 @@ body {
 
 #generator-button,
 #automatic-button,
+#automatic-F,
 #like-name,
 #stop {
     display: flex;
@@ -95,14 +96,31 @@ body {
     color: #fff;
 }
 
-#generator-button:hover,
-#automatic-button:hover {
+#generator-button:hover {
     background: #0a963d;
     transition: 300ms ease;
 }
 
+#automatic-button {
+    background: #267eea;
+}
+
+#automatic-button:hover {
+    background: #1260c0;
+    transition: 300ms ease;
+}
+
+#automatic-F {
+    background: #764ba2;
+}
+
+#automatic-F:hover {
+    background: #623094;
+    transition: 300ms ease;
+}
+
 #like-name {
-    background: #216788;
+    background: #1a8b8b;
     display: none;
 }
 
@@ -130,6 +148,7 @@ body {
 
     #generator-button, 
     #automatic-button,
+    #automatic-F,
     #like-name,
     #stop,
     .container-names {
@@ -141,12 +160,16 @@ body {
         margin-top: 1rem;
     }
 
+    #automatic-button {
+        padding-left: 0.57rem;
+    }
+
     #like-name {
-        padding-left: 3.8rem;
+        padding-left: 2rem;
     }
 
     #stop {
-        padding-left: 2rem;
+        padding-left: 0.30rem;
     }
 
     #title, .small-p {
@@ -154,7 +177,7 @@ body {
         text-align: center;
     }
 }
-
+ 
 @keyframes load {
     from {
         transform: rotate(0);

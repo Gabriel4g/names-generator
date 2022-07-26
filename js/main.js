@@ -3,37 +3,43 @@ const button_generator = document.querySelector("#generator-button");
 const nameText = document.querySelector("#nomes");
 const button_stop = document.querySelector("#stop");
 const button_like = document.querySelector("#like-name");
-const automatic_button = document.querySelector("#automatic-button");
+const automaticButtonMen = document.querySelector("#automatic-button");
+const automaticButtonWomen = document.querySelector("#automatic-F");
 const loadImg = document.querySelector(".loading");
 
-const names = [
+const womenNames = [
+    "Eva", "Maria", "Cecilia", "Clara", "Simone", "Marie", "Margaret",
+    "Valentina", "Rosa", "Nadia", "Joana", "Mary", "Anita", "Helen", "Amelia", "Naele", 
+    "Fernanda", "Catarina", "Carolina", "Angela", "Michelle", "Rita", "Nísia", "Lili",
+    "Katharine", "Vitória", "Elizabeth", "Anne", "Ana", "Kelly", "Diana", "Maísa", "Olívia"
+];
+
+const menNames = [
     "Gabriel", "Gustavo", "Julio", "Ismael", "Aquino", "Geovane", "João", "Lucas",
     "Alex", "Ryan", "Bruno", "Flavio", "Francisco", "Rômulo", "Rômero", "Fabio", "Pedro",
     "Guilherme", "Izaias", "Luis", "Luan", "Jhonatan", "Eduardo", "Arthur", "Antonio", "Felipe",
-    "Thiago", "Evandro", "Eva", "Maria", "Cecilia", "Clara", "Simone", "Marie", "Margaret",
-    "Valentina", "Rosa", "Nadia", "Joana", "Mary", "Anita", "Helen", "Amelia", "Naele", "Fernanda",
-    "Catarina", "Carolina", "Angela", "Michelle"
+    "Thiago", "Evandro", "Elton", "Iran", "Alisson", "Miguel", "Marcos", "Alexandre", "Alerrandro"
 ];
 
 const namesGenerator = () => {
-    const drawNames = Math.floor(Math.random() * names.length);
+    const drawNames = Math.floor(Math.random() * menNames.length);
 
-    nameText.innerHTML = names[drawNames];
+    nameText.innerHTML = menNames[drawNames];
 
     nameText.style.fontSize = "2rem";
     nameText.style.letterSpacing = "1px";
     button_like.style.display = "flex";
 }
-
-const automaticGenerator = () => {
+ 
+const automaticGeneratorMen = () => {
     loadImg.style.animation = "load 500ms";
     loadImg.style.display = "flex";
     nameText.innerHTML = "";
 
     setInterval(() => {
-    const drawNames = Math.floor(Math.random() * names.length);
+    const drawNames = Math.floor(Math.random() * menNames.length);
 
-    nameText.innerHTML = names[drawNames];
+    nameText.innerHTML = menNames[drawNames];
 
     loadImg.style.display = "none"
     }, 2500);
@@ -44,8 +50,32 @@ const automaticGenerator = () => {
     button_stop.style.display = "flex";
     button_like.style.display = "flex";
     button_generator.style.display = "none";
+    automaticButtonWomen.style.display = "none";
 
-    automatic_button.setAttribute("disabled", "disabled");
+    automaticButtonMen.setAttribute("disabled", "disabled");
+}
+
+const automaticGeneratorWomen = () => {
+    loadImg.style.animation = "load 500ms";
+    loadImg.style.display = "flex";
+    nameText.innerHTML = "";
+
+    setInterval(() => {
+    const drawNames = Math.floor(Math.random() * womenNames.length);
+
+    nameText.innerHTML = womenNames[drawNames]
+    loadImg.style.display = "none";
+    }, 2500)
+
+    nameText.style.fontSize = "2rem";
+    nameText.style.letterSpacing = "1px";
+
+    button_stop.style.display = "flex";
+    button_like.style.display = "flex";
+    automaticButtonMen.style.display = "none";
+    button_generator.style.display = "none";
+
+    automaticButtonWomen.setAttribute("disabled", "disabled");
 }
 
 const likeFromName = () => {
