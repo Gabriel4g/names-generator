@@ -9,7 +9,7 @@ const loadImg = document.querySelector(".loading");
 
 const womenNames = [
     "Eva", "Maria", "Cecilia", "Clara", "Simone", "Marie", "Margaret",
-    "Valentina", "Rosa", "Nadia", "Joana", "Mary", "Anita", "Helen", "Amelia", "Naele", 
+    "Valentina", "Rosa", "Nadia", "Joana", "Mary", "Anita", "Helen", "Amelia", "Naele",
     "Fernanda", "Catarina", "Carolina", "Angela", "Michelle", "Rita", "Nísia", "Lili",
     "Katharine", "Vitória", "Elizabeth", "Anne", "Ana", "Kelly", "Diana", "Maísa", "Olívia"
 ];
@@ -27,62 +27,69 @@ const arrayRamdom = [
     "Guilherme", "Izaias", "Luis", "Luan", "Jhonatan", "Eduardo", "Arthur", "Antonio", "Felipe",
     "Thiago", "Evandro", "Elton", "Iran", "Alisson", "Miguel", "Marcos", "Alexandre", "Alerrandro",
     "Eva", "Maria", "Cecilia", "Clara", "Simone", "Marie", "Margaret",
-    "Valentina", "Rosa", "Nadia", "Joana", "Mary", "Anita", "Helen", "Amelia", "Naele", 
+    "Valentina", "Rosa", "Nadia", "Joana", "Mary", "Anita", "Helen", "Amelia", "Naele",
     "Fernanda", "Catarina", "Carolina", "Angela", "Michelle", "Rita", "Nísia", "Lili",
     "Katharine", "Vitória", "Elizabeth", "Anne", "Ana", "Kelly", "Diana", "Maísa", "Olívia"
 ];
+
+ //Função que gera os nomes automáticos.
+function randomAutomaticNames(names) {
+    setInterval(() => {
+        const drawNames = Math.floor(Math.random() * names.length);
+
+        nameText.innerHTML = names[drawNames]
+        loadImg.style.display = "none";
+    }, 2500)
+}
+
+function aployFlexdisplay(button) {
+    button.style.display = "flex"
+}
+
+function loadingImg() {
+    loadImg.style.animation = "load 500ms";
+    loadImg.style.display = "flex";
+}
 
 const namesGenerator = () => {
     const drawNames = Math.floor(Math.random() * arrayRamdom.length);
 
     nameText.innerHTML = arrayRamdom[drawNames];
 
-    nameText.style.fontSize = "2rem";
-    nameText.style.letterSpacing = "1px";
-    button_like.style.display = "flex";
+    nameText.classList.add("style-text");
+    aployFlexdisplay(button_like);
 }
- 
+
+  //Função que gera os nomes masculinos
 const automaticGeneratorMen = () => {
-    loadImg.style.animation = "load 500ms";
-    loadImg.style.display = "flex";
+    loadingImg()
     nameText.innerHTML = "";
 
-    setInterval(() => {
-    const drawNames = Math.floor(Math.random() * menNames.length);
+    randomAutomaticNames(menNames)
 
-    nameText.innerHTML = menNames[drawNames];
+    nameText.classList.add("style-text")
 
-    loadImg.style.display = "none"
-    }, 2500);
+    aployFlexdisplay(button_stop);
+    aployFlexdisplay(button_like);
 
-    nameText.style.fontSize = "2rem"
-    nameText.style.letterSpacing = "1px"
-
-    button_stop.style.display = "flex";
-    button_like.style.display = "flex";
     button_generator.style.display = "none";
     automaticButtonWomen.style.display = "none";
 
     automaticButtonMen.setAttribute("disabled", "disabled");
 }
 
+  //Função que gera os nomes femininos
 const automaticGeneratorWomen = () => {
-    loadImg.style.animation = "load 500ms";
-    loadImg.style.display = "flex";
+    loadingImg()
     nameText.innerHTML = "";
 
-    setInterval(() => {
-    const drawNames = Math.floor(Math.random() * womenNames.length);
+    randomAutomaticNames(womenNames);
 
-    nameText.innerHTML = womenNames[drawNames]
-    loadImg.style.display = "none";
-    }, 2500)
+    nameText.classList.add("style-text");
 
-    nameText.style.fontSize = "2rem";
-    nameText.style.letterSpacing = "1px";
+    aployFlexdisplay(button_stop);
+    aployFlexdisplay(button_like);
 
-    button_stop.style.display = "flex";
-    button_like.style.display = "flex";
     automaticButtonMen.style.display = "none";
     button_generator.style.display = "none";
 
@@ -92,7 +99,7 @@ const automaticGeneratorWomen = () => {
 const likeFromName = () => {
     let likedName = [];
     alert(`Você gostou de ${nameText.innerHTML}`);
-    
+
     likedName.push(nameText.innerHTML);
 
     console.log(likedName);

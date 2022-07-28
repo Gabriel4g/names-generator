@@ -188,3 +188,12 @@ body {
 .loading {
     display: none;
 }
+
+.style-text {
+    font-size: 2rem !important;
+    letter-spacing: 1px;
+}
+
+.display-flex {
+    display: flex;
+}
